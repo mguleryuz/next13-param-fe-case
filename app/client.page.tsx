@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Card, Divider, Form, Space } from "antd";
+import { Button, Card, Divider, Space } from "antd";
 import Package, { PackageProps } from "./components/Package";
 import { useAppSelector } from "./lib/store";
 import { useRouter } from "next/navigation";
@@ -11,9 +11,11 @@ export default function HomePageClient({
   packages: PackageProps[];
 }) {
   const route = useRouter();
-  const { packageIds, totalAmount, isActive, isAuth, currency } = useAppSelector(
-    (state) => ({ ...state.cart, ...state.auth })
+  const { packageIds, totalAmount, isActive, currency } = useAppSelector(
+    (state) => state.cart
   );
+
+  const { isAuth } = useAppSelector((state) => state.auth);
 
   return (
     <form
