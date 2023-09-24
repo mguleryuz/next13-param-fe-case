@@ -9,6 +9,7 @@
 }
 
 body {
+  margin: 0;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -16,4 +17,31 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+.root-content > * {
+  height: max-content;
+}
+
+p {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+.list-horizontal {
+  padding-inline-start: 0;
+}
+
+.list-horizontal li {
+  display: inline-block;
+}
+.list-horizontal li:before {
+  content: "\00a0\2022\00a0\00a0";
+}
+
+.hoverOutline:hover {
+  outline: 2px solid #7AC500;
 }
